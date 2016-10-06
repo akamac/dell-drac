@@ -1,9 +1,9 @@
 @{
 	RootModule = 'DRAC.psm1'
-	ModuleVersion = '1.0.0'
+	ModuleVersion = '1.0.1'
 	GUID = '679ffa5a-9451-3dc1-9529-8689cbb0c8a0'
 	Author = 'Alexey Miasoedov'
-	CompanyName = 'Intermedia'
+	CompanyName = 'MyCompany'
 	Copyright = '(c) 2016 Alexey Miasoedov. All rights reserved.'
 	Description = 'Interact with DRAC via CIM interface'
 	PowerShellVersion = '4.0'
@@ -14,7 +14,7 @@
 	# ProcessorArchitecture = ''
 	# RequiredModules = @()
 	# RequiredAssemblies = @()
-	ScriptsToProcess = @('load-dependencies.ps1')
+	# ScriptsToProcess = @('load\load-dependencies.ps1')
 	# TypesToProcess = @()
 	# FormatsToProcess = @()
 	# NestedModules = @()
@@ -37,8 +37,10 @@
 	VariablesToExport = '*'
 	AliasesToExport = '*'
 	# ModuleList = @()
-	FileList = 'DRAC.psm1','load-dependencies.ps1'
-	# PrivateData = ''
+	FileList = 'DRAC.psm1'
+	# PrivateData = @{
+	#	'RequiredPackages' = @()
+	# }
 	# HelpInfoURI = ''
 	DefaultCommandPrefix = 'Drac'
 }
