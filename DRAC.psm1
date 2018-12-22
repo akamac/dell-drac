@@ -1,4 +1,4 @@
-﻿<#
+<#
 cd wsman:\localhost
 Set-Item .\MaxBatchItems –Value 100
 cd wsman:\localhost\Client
@@ -174,7 +174,7 @@ function Update-Fw {
     # detect DC -> NFS node, protocol, file based on server generation
     $PSBoundParameters.Remove('Url')
     $DracFw = Invoke-CIM @PSBoundParameters -CimClass DCIM_SoftwareIdentity -KeepSession |
-    ? {	$_.Status -eq 'Installed' -and $_.ElementName -match 'iDRAC' }
+    ? { $_.Status -eq 'Installed' -and $_.ElementName -match 'iDRAC' }
     $Job = Invoke-CIM @PSBoundParameters -CimClass DCIM_SoftwareInstallationService -KeepSession -MethodName InstallFromURI -MethodParameters @{
         URI = $Url
         Target = [ref]$DracFw
